@@ -19,8 +19,6 @@ function RenderTable({ employeeArr }) {
                 if (!rowtext.includes(event.target.value.toLowerCase())) {
 
                     rows[i].parentElement.style.display = "none"
-
-                    console.log(rows[i].parentElement)
                 } else {
 
                     rows[i].parentElement.style.display = null
@@ -37,7 +35,17 @@ function RenderTable({ employeeArr }) {
         }
     }
 
-    function sortTable() {
+    function sortAlpha() {
+
+        
+        let searchedVal = document.querySelector(".search-bar").value
+        let rows = document.getElementsByClassName("employee-name")
+        
+        for (var i = 0; i < rows.length; i++) {
+
+            rows[i].parentElement.style.display= null
+            console.log(1)
+        }
 
         if (isSorted === 0) {
             employeeArr.sort((a, b) => {
@@ -52,6 +60,38 @@ function RenderTable({ employeeArr }) {
             })
 
             setIsSorted(1)
+            console.log(2)
+        }
+
+        if (searchedVal) {
+            console.log(searchedVal)
+            for (i = 0; i < rows.length; i++) {
+
+                let rowtext = rows[i].textContent.toLowerCase()
+                console.log(rowtext)
+                if (!rowtext.includes(searchedVal.toLowerCase())) {
+
+                    rows[i].parentElement.style.display = "none"
+                    console.log("false")
+                } else {
+
+                    rows[i].parentElement.style.display = null
+                    console.log("true")
+                }
+            }
+            console.log(3)
+        }
+    }
+
+    function sortReverseAlpha() {
+
+        let searchedVal = document.querySelector(".search-bar").value
+        let rows = document.getElementsByClassName("employee-name")
+
+        for (var i = 0; i < rows.length; i++) {
+
+            rows[i].parentElement.style.display= null
+            console.log(1)
         }
 
         if (isSorted === 1) {
@@ -68,15 +108,42 @@ function RenderTable({ employeeArr }) {
             })
 
             setIsSorted(0)
+            console.log(2)
+        }
+        
+        if (searchedVal) {
+
+            console.log(searchedVal)
+            for (i = 0; i < rows.length; i++) {
+
+                let rowtext = rows[i].textContent.toLowerCase()
+                console.log(rowtext)
+                if (!rowtext.includes(searchedVal.toLowerCase())) {
+
+                    rows[i].parentElement.style.display = "none"
+                    console.log("false")
+                } else {
+
+                    rows[i].parentElement.style.display = null
+                    console.log("true")
+                }
+            }
+            console.log(3)
         }
     }
+    // function sortTable() {
+
+    //     sortAlpha()
+    //     sortReverseAlpha()
+    // }
+
     return (
 
         <table className="table table-dark">
             <tr>
                 <th></th>
-                <th className="text-center"><a className="name-header" onClick={event => sortTable()}>Name</a>
-                    <input class="mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={event => filterNames(event)}></input>
+                <th className="text-center"><a className="name-header" onClick={event => (isSorted === 0) ? sortAlpha() : sortReverseAlpha()}>Name</a>
+                    <input class="mr-sm-2 search-bar" type="search" placeholder="Search" aria-label="Search" onChange={event => filterNames(event)}></input>
                 </th>
                 <th className="text-center">Email</th>
                 <th className="text-center">Phone</th>
