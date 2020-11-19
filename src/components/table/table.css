@@ -1,0 +1,14 @@
+.name-header{
+
+    color: white;
+    transition: all .6s ease-in-out;
+    text-decoration: none;
+}
+
+.name-header:hover{
+
+    cursor: pointer;
+    transition: all .6s ease-in-out;
+    color: red;
+    text-decoration: none;
+  }

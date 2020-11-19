@@ -3,7 +3,7 @@ import React from "react"
 function RenderRow({ employee }) {
 
     return (
-        <tr>
+        <tr className="employee-row">
             <td className="employee-picture text-center"><img src={employee.picture.medium} /></td>
             <td className="employee-name text-center">{`${employee.name.first} ${employee.name.last}`}</td>
             <td className="employee-email text-center">{`${employee.email}`}</td>
