@@ -69,6 +69,7 @@ function RenderTable({ employeeArr }) {
             for (i = 0; i < rows.length; i++) {
 
                 let rowtext = rows[i].textContent.toLowerCase()
+                rows[i].parentElement.style.display = null
                 console.log(rowtext)
                 if (!rowtext.includes(searchedVal.toLowerCase())) {
 
@@ -88,12 +89,6 @@ function RenderTable({ employeeArr }) {
 
         let searchedVal = document.querySelector(".search-bar").value
         let rows = document.getElementsByClassName("employee-name")
-
-        for (var i = 0; i < rows.length; i++) {
-
-            rows[i].parentElement.style.display= null
-            console.log(1)
-        }
 
         if (isSorted === 1) {
 
@@ -116,9 +111,10 @@ function RenderTable({ employeeArr }) {
         if (searchedVal) {
 
             console.log(searchedVal)
-            for (i = 0; i < rows.length; i++) {
+            for (var i = 0; i < rows.length; i++) {
 
                 let rowtext = rows[i].textContent.toLowerCase()
+                rows[i].parentElement.style.display = null
                 console.log(rowtext)
                 if (!rowtext.includes(searchedVal.toLowerCase())) {
 

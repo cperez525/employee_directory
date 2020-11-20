@@ -13,7 +13,7 @@
   To use this product, navigate to https://powerful-peak-79052.herokuapp.com/.
 
   ## Usage
-  Upon arrival at the website, you will be able to view employee information rendered in a table format. The website currently serves as a demo for this application- the information of randomized fictional people is rendered on the website. You may filter and/or sort the table by employee name
+  Upon arrival at the website, you will be able to view employee information rendered in a table format. The website currently serves as a demo for this application- the information of randomized fictional people is rendered on the website. You may filter and/or sort the table by employee name. 
   
   Please refer to the following for a visual example: 
   ![gif example](/images/employee_directory_demo.gif)
