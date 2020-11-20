@@ -63,6 +63,7 @@ function RenderTable({ employeeArr }) {
             console.log(2)
         }
 
+        rows = document.getElementsByClassName("employee-name")
         if (searchedVal) {
             console.log(searchedVal)
             for (i = 0; i < rows.length; i++) {
@@ -111,6 +112,7 @@ function RenderTable({ employeeArr }) {
             console.log(2)
         }
         
+        rows = document.getElementsByClassName("employee-name")
         if (searchedVal) {
 
             console.log(searchedVal)
